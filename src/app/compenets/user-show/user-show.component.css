@@ -1,0 +1,12 @@
+.show-container {
+    display: flex;
+}
+
+.avatar {
+    flex: 1;
+    border-radius: 50%;
+}
+
+.name {
+    flex: 4;
+}

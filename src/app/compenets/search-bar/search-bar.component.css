@@ -1,0 +1,15 @@
+.search-container {
+    margin-top: 5%;
+}
+.title{
+}
+.search-bar {
+    display: flex;
+}
+.search {
+    flex: 3;
+}
+.search-btn {
+    flex: 1;
+    margin-left: 5px;
+}
