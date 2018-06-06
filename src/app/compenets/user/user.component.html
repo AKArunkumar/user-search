@@ -1,16 +1,16 @@
 <div class="user-container">
   <div class="avatar-show">
-    <img [src]="dummyData.photo" width="250px" height="250px" alt="" srcset="">
+    <img [src]="user.avatar_url" width="250px" height="250px" alt="" srcset="">
   </div>
   <div class="user-details">
     <div class="user" (click)="userdetails()" ><h5>User Details</h5></div>
     <div class="repos" (click)="repodetails()"><h5>User Repos</h5></div>
   </div>
   <div class="profile" [hidden]="profileShow">
-    <h6>Name: {{dummyData.name}} </h6>
+    <h6>Name: {{user.name}} </h6>
   </div>
   <div class="repo-details" [hidden]="!profileShow" >
-      <h6>Name: {{dummyData.repos}}</h6>
+      <h6 *ngFor="let repo of repos"> {{repo}} </h6>
     
   </div>
 </div>

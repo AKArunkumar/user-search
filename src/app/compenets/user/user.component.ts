@@ -16,8 +16,6 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   this.userservice.userinfo.subscribe(usr => {
       this.user = usr;
-      console.log(this.user);
-      
     })
   }
   userdetails(){
@@ -26,7 +24,7 @@ export class UserComponent implements OnInit {
   repodetails(){
     this.profileShow = true;
     if(this.repos.length == 0) {
-      this.userservice.getUserRepos().subscribe(data => {
+      this.userservice.getUserRepos(this.user.repos_url).subscribe(data => {
         this.repos = data;
       })
     }    
