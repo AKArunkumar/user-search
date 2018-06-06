@@ -2,24 +2,44 @@
     margin-top: 5%;
 }
 .title{
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 30px;
+    text-align: center;
 }
 .search-bar {
 }
 .search {
+    font-family: 'Goudy Bookletter 1911', serif;
+    border-radius: 2%;
 }
 .show-container {
     display: flex;
-    margin: 10px 5px 0 5px;
+    margin: 5px 5px 0 5px;
+    border-radius: 2%;
 }
+.show-container:nth-child(even) {background: #CCC}
+.show-container:nth-child(odd) {background: cadetblue}
 
 .avatar {
     flex: 1;
     max-width: 50%;
+    justify-self: center;
+    align-self: center;
+    margin-left: 10px;
 }
 img{
     border-radius: 50%;
 }
 .name {
-    flex: 4;
+    flex: 6;
     cursor: pointer;
+    align-self: center;    
+    
+}
+.nameshow {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 20px;
+}
+.score {
+    font-family: 'Courier New', Courier, monospace;
 }
