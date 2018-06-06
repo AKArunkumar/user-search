@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 import { UserService } from '../../shared/serives/user.service';
+import { User } from '../../shared/user.model';
 
 @Component({
   selector: 'app-search-bar',
@@ -10,12 +13,17 @@ import { UserService } from '../../shared/serives/user.service';
 export class SearchBarComponent implements OnInit {
 
   filtername = '';
-  constructor(private userservice: UserService) { }
+  allUsers: User[] = [];  
+  constructor(private userservice: UserService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.userservice.getUsers();
+    this.allUsers = this.userservice.users;
   }
-  doFilter(filtername: string) {
-    this.userservice.searchName.next(filtername)
-    
+  userClick(usr: User) {
+    this.userservice.userinfo.next(usr);
+    setTimeout(this.router.navigate([usr.name]), 1000);
   }
+ 
 }
