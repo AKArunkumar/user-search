@@ -8,7 +8,7 @@ import { UserfilterPipe } from './pipes//userfilter.pipe';
 import { UserService } from './shared//serives/user.service';
 import { UserShowComponent } from './compenets/user-show/user-show.component';
 import { SearchBarComponent } from './compenets/search-bar/search-bar.component';
-import { UserComponent } from './compenets/user-show/user/user.component';
+import { UserComponent } from './compenets/user/user.component';
 
 
 @NgModule({
