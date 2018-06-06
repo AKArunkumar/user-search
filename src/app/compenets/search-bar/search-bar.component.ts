@@ -15,13 +15,13 @@ export class SearchBarComponent implements OnInit {
   filtername = '';
   allUsers: User[] = [];  
   constructor(private userservice: UserService,
-              private router: Router) { }
+              private router: Router) { 
+    this.userservice.getUsers();
+                
+              }
 
   ngOnInit() {
-    if(this.allUsers.length == 0){
-    this.userservice.getUsers();
     this.allUsers = this.userservice.users;    
-  }
   }
   userClick(usr: User) {
     this.userservice.userinfo.next(usr);
