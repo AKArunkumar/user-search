@@ -11,7 +11,7 @@ export class UserfilterPipe implements PipeTransform {
     }
     else{
       // filter each user by name
-      return value;
+      return value.filter(user => user.name.toLowerCase().includes(filtername.toLowerCase()));
     }
   }
 }
