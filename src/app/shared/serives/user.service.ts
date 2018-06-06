@@ -11,8 +11,7 @@ import { User } from '../user.model';
 export class UserService {
 
   users: User[] = [];
-  searchName = new BehaviorSubject<string>("");
-  userinfo = new Subject<User>();
+  userinfo = new BehaviorSubject<any>("");
   users_api = 'https://api.github.com/search/users?q=tom';
   constructor(private http: HttpClient) { }
 
@@ -27,8 +26,7 @@ export class UserService {
 
  }
 
-  getUserRepos() {
-    const url = 'https://api.github.com/users/mojombo/repos';
+  getUserRepos(url: string) {
     return this.http.get<any[]>(url)
                     .pipe(
                         map((data) => {
