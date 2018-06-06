@@ -17,7 +17,8 @@ export class UserService {
 
   getUsers() {
     this.http.get(this.users_api).subscribe(data => {
-      const userItem = data["items"];
+        this.users.length = 0;
+        const userItem = data["items"];
       userItem.forEach(user => {
         let usr = new User(user["login"], user["id"], user["avatar_url"], user["html_url"], user["followers_url"],user["following_url"],user["repos_url"],user["score"])
         this.users.push(usr);
