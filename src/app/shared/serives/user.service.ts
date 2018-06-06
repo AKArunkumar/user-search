@@ -31,12 +31,12 @@ export class UserService {
     const url = 'https://api.github.com/users/mojombo/repos';
     return this.http.get<any[]>(url)
                     .pipe(
-                      map((data) => {
-                        let repos:any[] =[];
-                        data.forEach(repoinfo => {
-                          repos.push(repoinfo['name']);
-                        });
-                        return repos;                
+                        map((data) => {
+                          let repos:any[] =[];
+                          data.forEach(repoinfo => {
+                            repos.push(repoinfo['name']);
+                          });
+                          return repos;                
                       })
                     )
   }
