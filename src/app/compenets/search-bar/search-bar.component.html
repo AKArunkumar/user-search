@@ -2,7 +2,15 @@
   <p class="title">Search User</p>
   <div class="search-bar">
       <div class="search">
-          <input class="form-control" type="text" placeholder="Search"  aria-label="Search" [ngModel]="filtername" (ngModelChange)="doFilter($event)" >
+          <input class="form-control" type="text" placeholder="Search"  aria-label="Search" [(ngModel)]="filtername" >
         </div>
   </div>
 </div>
+<div class="show-container" *ngFor="let user of allUsers | userfilter:filtername">
+    <div class="avatar">
+      <img [src]="user.avatar_url" width="50px" height="50px" alt="" srcset="">
+    </div>
+    <div class="name" (click)="userClick(user)">
+      <p> {{user.name}} </p>
+    </div>
+  </div>
