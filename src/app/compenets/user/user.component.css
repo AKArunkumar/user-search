@@ -2,6 +2,7 @@
     margin-top: 10%;
     display: flex;
     flex-direction: column;
+    font-family: 'Goudy Bookletter 1911', serif;
 }
 
 .avatar-show {
@@ -23,14 +24,45 @@ img{
     flex: 1;
     border: 2px solid black;
     cursor: pointer;
+    text-align: center;
+    
 }
 .repos {
     flex: 1;
     border: 2px solid black;
     border-left: none;
     cursor: pointer;
-}
-h5{
     text-align: center;
-    padding: 0px;
+    
+}
+.profile {
+    margin: 20px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+.rowOne{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+.key {
+    flex: 1;
+}
+
+.value{
+    flex: 1;
+}
+
+.repo-details{
+    margin: 20px 30px 0 30px;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.repo-show{
+    text-align: start;
+    font-size: 20px !important;
 }

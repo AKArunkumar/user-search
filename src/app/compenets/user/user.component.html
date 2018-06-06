@@ -3,14 +3,49 @@
     <img [src]="user.avatar_url" width="250px" height="250px" alt="" srcset="">
   </div>
   <div class="user-details">
-    <div class="user" (click)="userdetails()" ><h5>User Details</h5></div>
-    <div class="repos" (click)="repodetails()"><h5>User Repos</h5></div>
+    <div class="user" (click)="userdetails()">
+      <h5>User Details</h5>
+    </div>
+    <div class="repos" (click)="repodetails()">
+      <h5>User Repos</h5>
+    </div>
   </div>
-  <div class="profile" [hidden]="profileShow">
-    <h6>Name: {{user.name}} </h6>
-  </div>
-  <div class="repo-details" [hidden]="!profileShow" >
-      <h6 *ngFor="let repo of repos"> {{repo}} </h6>
-    
+  <div class="showdetail">
+    <div class="profile" [hidden]="profileShow">
+      <div class="rowOne">
+          <div class="key">
+              User Name
+            </div>
+            <div class="value">
+              {{user.name | titlecase }}
+            </div>
+      </div>
+     <div class="rowOne">
+        <div class="key">
+          ID
+        </div>
+      <div class="value">
+        {{ user.id }}
+      </div>
+     </div>
+      <div class="rowOne">
+          <div class="key">
+            Score
+          </div>
+          <div class="value">
+            {{ user.score }}
+          </div>
+      </div>
+      <div class="url" >
+        <a href="{{user.html_url}}" style="font-size: 10px;" class="btn btn-success">
+            {{user.name | titlecase }} URL
+        </a>
+      </div>
+    </div>
+    <div class="repo-details" [hidden]="!profileShow">
+      <div class="repo-show" *ngFor="let repo of repos">
+          {{repo}}
+      </div>
+    </div>
   </div>
 </div>
