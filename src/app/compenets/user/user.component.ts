@@ -8,11 +8,9 @@ import { User } from '../../shared/user.model';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  dummyData = { name: "arunkumar", photo:"https://avatars0.githubusercontent.com/u/1?v=4",
-                repos: "waitfor"}
   profileShow = false;
   user: User;
-  repos: string[];
+  repos: any[] =[];
   constructor(private userservice: UserService) { }
 
   ngOnInit() {
@@ -22,16 +20,15 @@ export class UserComponent implements OnInit {
       
     })
   }
-
   userdetails(){
     this.profileShow = false;    
   }
   repodetails(){
     this.profileShow = true;
-    this.userservice.getUserRepos().subscribe(data => {
-      console.log(data);
-      
-    })
-    
+    if(this.repos.length == 0) {
+      this.userservice.getUserRepos().subscribe(data => {
+        this.repos = data;
+      })
+    }    
   }
 }
