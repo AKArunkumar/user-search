@@ -18,8 +18,10 @@ export class SearchBarComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    if(this.allUsers.length == 0){
     this.userservice.getUsers();
-    this.allUsers = this.userservice.users;
+    this.allUsers = this.userservice.users;    
+  }
   }
   userClick(usr: User) {
     this.userservice.userinfo.next(usr);
